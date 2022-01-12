@@ -24,7 +24,7 @@ public class Hooks {
 	
 	@After()
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 	
 //	@After(order = 1, value = "@login")
