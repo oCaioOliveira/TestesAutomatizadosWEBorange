@@ -1,5 +1,6 @@
 package stepsDefinitions;
 
+import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 
 import io.cucumber.java.Before;
@@ -9,13 +10,13 @@ import static utils.Utils.*;
 
 public class Hooks {
 	
-	@Before()
-	public void setUp() {
+	@Before(value = "not @login")
+	public void suiteSetUp() {
 		acessarSistema();
 		Na(LoginPage.class).realizarLogin("Admin", "admin123");
 	}
 	
-	@Before(value = "login")
+	@Before(value = "@login")
 	public void funcionalidadeLogin() {
 		acessarSistema();
 	}
@@ -30,9 +31,10 @@ public class Hooks {
 //		acessarSistema();
 //	}
 	
-	@After()
-	public void tearDown() {
-//		driver.quit();
+	@After(order = 0)
+	public void suiteTearDown(Scenario scenario) throws Exception {
+		capturarTela(scenario);
+		driver.quit();
 	}
 	
 //	@After(order = 1, value = "@login")
@@ -46,3 +48,4 @@ public class Hooks {
 //	}
 	
 }
+

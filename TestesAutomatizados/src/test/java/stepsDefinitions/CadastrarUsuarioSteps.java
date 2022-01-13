@@ -43,7 +43,7 @@ public class CadastrarUsuarioSteps {
 		Na(CadastrarUsuarioPage.class).infromarCampoConfirmarPassword(confirmarPassword);
 	}
 	
-	@E("^acionar o botao salvar$")
+	@Quando("^acionar o botao salvar$")
 	public void acionarOBotaoSalvar() throws Throwable {
 		Na(CadastrarUsuarioPage.class).acionarBotaoSalvar();
 	}

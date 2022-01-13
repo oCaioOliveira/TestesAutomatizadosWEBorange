@@ -1,5 +1,5 @@
 #language: pt
-#enconding: UTF-8
+#encoding: UTF-8
 
 @login
 Funcionalidade: Login
@@ -16,3 +16,5 @@ Funcionalidade: Login
     E informar a senha "admin123"
     E clicar no botao login
     Entao o sistema exibe o usuario logado
+    
+    
